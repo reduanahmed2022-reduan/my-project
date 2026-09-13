@@ -1,35 +1,68 @@
-# React + TypeScript + Vite
+My Project Name: Dev Stack Builder.
+Dev Stack Builder is a simple web tool for developers to discover tools and frameworks, pick their favorites, and manage their personal tech stack in one place.
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Technology that you use :
 
-Currently, two official plugins are available:
+React.js (Frontend Library)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Tailwind CSS & DaisyUI (Styling & Component Library)
 
-## React Compiler
+JavaScript (ES6+) / TypeScript (Programming Language)
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+Vite (Build Tool)
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+JSON (Local Data Source)
 
-## Expanding the Oxlint configuration
+React-Toastify (Notification Alerts)
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+3 Features About My Project:
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+Interactive Stack Management: Easily add technologies to the sidebar stack by clicking the "Add to Stack" button. Duplicate entries are automatically prevented, and the button gets disabled once an item is added.
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Dynamic Data Fetching & Loading State: Fetches technology data asynchronously from a local JSON file while displaying a smooth loading spinner or message until the data is fully loaded.
+
+Custom Toast Notifications: Integrates the react-toastify package to show real-time alert notifications whenever an item is added, removed, or when the entire stack is cleared.
+
+
+           React Conceptual Questions & Answers
+           
+ 
+What is JSX, and why is it used in React?
+
+JSX: JSX stands for JavaScript XML. It allows you to write HTML-like code inside JavaScript.
+
+Why it is used: It makes writing and understanding React UI components much easier and cleaner.
+
+What is the difference between props and state?
+
+Props: Data passed from a parent component to a child component. It is read-only (cannot be modified by the child).
+
+State: Data managed inside the component that can change over time. When state changes, the component re-renders.
+
+What does the useState hook do, and where did you use it in this project?
+
+What it does: It stores and updates local data/state inside a functional component.
+
+Where I used it: I used it to store the array of selected technologies (myStack) and to manage the loading state (isLoading).
+
+What does the useEffect hook do, and why did you need it to load the JSON data?
+
+What it does: It handles side effects in components, such as fetching data or setting up timers.
+
+Why it was needed: To fetch and load the technology data from the local JSON file automatically when the page first loads.
+
+Why does every item in a .map() list need a unique key prop?
+
+It helps React identify which items have changed, been added, or removed. This improves performance and avoids unnecessary re-rendering.
+
+What is conditional rendering? Show one place you used it.
+
+Definition: Displaying different UI elements based on specific conditions or boolean values.
+
+Example: Showing an empty message when no items are selected, and displaying the item list when technologies are added (myStack.length === 0 ? <EmptyState/> : <StackList/>).
+
+How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+
+Parent to Child: The parent passes data as custom attributes (props) to the child component.
+
+Child to Parent: The parent passes a callback function as a prop, and the child calls that function with data as arguments (e.g., onAddToCart(tech)).
