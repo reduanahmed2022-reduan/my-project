@@ -9,14 +9,13 @@ import Navbar from './component/navbar';
 import Hero from './component/Hero';
 import TechCard from './component/TechCard';
 import StackSidebar from './component/StackSidebar';
-// import Footer from './component/Footer';
+import Footer from './component/Footer';
 
 function App() {
   const [techList, setTechList] = useState<TechItem[]>([]);
   const [myStack, setMyStack] = useState<TechItem[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
-  // Load technology data from JSON
   useEffect(() => {
     fetch('/data.json')
       .then((res) => res.json())
@@ -30,7 +29,6 @@ function App() {
       });
   }, []);
 
-  // Add technology to sidebar stack
   const handleAddTech = (item: TechItem) => {
     const isAlreadyAdded = myStack.find((tech) => tech.id === item.id);
     
@@ -43,7 +41,6 @@ function App() {
     toast.success(`Added ${item.name} to stack`, { position: 'bottom-right' });
   };
 
-  // Remove single item from stack
   const handleRemoveTech = (id: string) => {
     const itemToRemove = myStack.find((tech) => tech.id === id);
     const updatedStack = myStack.filter((tech) => tech.id !== id);
@@ -54,7 +51,6 @@ function App() {
     }
   };
 
-  // Remove all items from stack
   const handleClearStack = () => {
     setMyStack([]);
     toast.error('Cleared all items from stack', { position: 'bottom-right' });
@@ -68,7 +64,6 @@ function App() {
         <Navbar />
         <Hero />
 
-        {/* Section Header */}
         <div id="tech" className="max-w-7xl mx-auto pt-10 px-6">
           <h2 className="text-2xl font-bold text-gray-900">
             Explore the{' '}
@@ -81,7 +76,6 @@ function App() {
           </p>
         </div>
 
-        {/* Main Section */}
         <main className="max-w-7xl mx-auto py-6 px-6">
           {loading ? (
             <div className="text-center py-20">
@@ -89,7 +83,7 @@ function App() {
             </div>
           ) : (
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-              {/* Technology List (3 Columns) */}
+            
               <div className="lg:col-span-3">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {techList.map((tech) => (
@@ -103,7 +97,6 @@ function App() {
                 </div>
               </div>
 
-              {/*Stack Sidebar (1 Column) */}
                <div className="lg:col-span-1">
                 <StackSidebar
                   stack={myStack}
@@ -116,7 +109,7 @@ function App() {
         </main>
       </div>
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
