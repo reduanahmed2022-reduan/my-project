@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import logo from '../assets/logo-text.png'
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -7,7 +8,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 px-6 py-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
-        {/* Mobile Hamburger Icon */}
+        
         <div className="md:hidden">
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -15,31 +16,25 @@ const Navbar = () => {
           >
             {mobileMenuOpen ? '✕' : '☰'}
           </button>
-        </div>
+        </div>  
+       <div className="flex items-center gap-2">
+        <img 
+         src={logo} 
+         alt="DevStack Logo" 
+         className="h-8 md:h-9 w-auto object-contain" 
+       />
+     </div>
 
-        {/* Brand Logo */}
-        <div className="flex items-center space-x-2">
-          <div className="bg-gradient-to-b to-purple-600 from-orange-400 via-pink-500  text-white font-bold px-2 py-1 rounded text-sm">
-          DS
-         </div>
-          {/* <div className="w-7 h-7 bg-gradient-to-r bg-pink-600 rounded flex items-center justify-center text-white text-xs font-bold">
-            DS
-          </div> */}
-          <span className="text-xl font-bold text-gray-900">
-            Dev<span className="text-red-600"> Stack</span>
-          </span>
-        </div>
-
-        {/* Menu Links for Desktop */}
+       
         <div className="hidden md:flex items-center space-x-8 text-sm text-gray-600">
-          <a href="#home" className="text-pink-600 font-semibold">Home</a>
-          <a href="#tech" className="hover:text-gray-900">Technologies</a>
-          <a href="#projects" className="hover:text-gray-900">Projects</a>
-          <a href="#about" className="hover:text-gray-900">About</a>
-          <a href="#contact" className="hover:text-gray-900">Contact</a>
+          <a href="" className="text-pink-600 font-semibold">Home</a>
+          <a href="" className="hover:text-gray-900">Technologies</a>
+          <a href="" className="hover:text-gray-900">Projects</a>
+          <a href="" className="hover:text-gray-900">About</a>
+          <a href="" className="hover:text-gray-900">Contact</a>
         </div>
 
-        {/* Buttons */}
+      
         <div className="flex items-center space-x-4">
           <button className="text-sm font-medium text-gray-600 hover:text-gray-900">
             Sign In
@@ -50,7 +45,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+     
       {mobileMenuOpen && (
         <div className="md:hidden mt-3 pt-3 border-t border-gray-100 flex flex-col space-y-2 text-sm text-gray-600">
           <a href="#home" className="py-1">Home</a>
