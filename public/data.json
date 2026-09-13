@@ -94,7 +94,7 @@
     "name": "Java",
     "category": "Language",
     "description": "A secure, object-oriented programming language designed for portability and scale.",
-    "icon": "https://icon.icepanel.io/Technology/png/Java.png",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
     "rating": 4.6,
     "difficulty": "Intermediate",
     "badge": "Robust"
@@ -114,7 +114,7 @@
     "name": "Docker",
     "category": "DevOps",
     "description": "A platform designed to build, share, and run containerized applications safely.",
-    "icon": "https://icon.icepanel.io/Technology/png/Docker.png",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
     "rating": 4.7,
     "difficulty": "Intermediate",
     "badge": "Containers"
