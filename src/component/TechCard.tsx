@@ -10,7 +10,9 @@ interface TechCardProps {
 
 const TechCard = ({ tech, onAdd, isAdded }: TechCardProps) => {
   return (
-    <div className="bg-white border rounded-xl p-5 shadow-sm">
+    <div  className={`p-6 bg-white rounded-lg transition-all duration-200 ${
+    isAdded ? 'border-2 border-red-500' : 'border border-gray-200'
+  }`}>
 
       <div className="flex justify-between items-center">
         <img
