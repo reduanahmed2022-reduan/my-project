@@ -18,7 +18,6 @@ const TechCard = ({ tech, onAdd, isAdded }: TechCardProps) => {
           alt={tech.name}
           className="w-8 h-8"
         />
-
         <span className="text-xs bg-blue-50 text-blue-500 px-2 py-1 rounded">
           {tech.badge}
         </span>

@@ -8,7 +8,7 @@ import type { TechItem } from './Types/tech';
 import Navbar from './component/navbar';
 import Hero from './component/Hero';
 import TechCard from './component/TechCard';
-// import StackSidebar from './component/StackSidebar';
+import StackSidebar from './component/StackSidebar';
 // import Footer from './component/Footer';
 
 function App() {
@@ -103,14 +103,14 @@ function App() {
                 </div>
               </div>
 
-              {/* Stack Sidebar (1 Column) */}
-              {/* <div className="lg:col-span-1">
+              {/*Stack Sidebar (1 Column) */}
+               <div className="lg:col-span-1">
                 <StackSidebar
                   stack={myStack}
                   onRemove={handleRemoveTech}
                   onClearAll={handleClearStack}
                 />
-              </div> */}
+              </div>
             </div>
           )}
         </main>

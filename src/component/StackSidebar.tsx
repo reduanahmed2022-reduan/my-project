@@ -1,4 +1,5 @@
 import type { TechItem } from '../Types/tech';
+import { IoClose } from "react-icons/io5";
 interface StackSidebarProps {
   stack: TechItem[];
   onRemove: (id: string) => void;
@@ -13,7 +14,6 @@ const StackSidebar = ({ stack, onRemove, onClearAll }: StackSidebarProps) => {
         <p className="text-xs text-gray-400 mt-0.5">{stack.length} Technology Selected</p>
       </div>
 
-      {/* Conditional Rendering for Empty Stack */}
       {stack.length === 0 ? (
         <div className="text-center py-10 border border-dashed border-gray-200 rounded-lg">
           <p className="text-xs text-gray-400">No technology added yet</p>
@@ -31,10 +31,10 @@ const StackSidebar = ({ stack, onRemove, onClearAll }: StackSidebarProps) => {
                   <span className="text-xs font-semibold text-gray-800">{item.name}</span>
                 </div>
                 <button
-                  onClick={() => onRemove(item.id)}
-                  className="text-gray-400 hover:text-red-500 text-xs px-1"
+                onClick={() => onRemove(item.id)}
+                className="text-gray-400 hover:text-red-500 text-xl"
                 >
-                  ✕
+                <IoClose />
                 </button>
               </div>
             ))}
