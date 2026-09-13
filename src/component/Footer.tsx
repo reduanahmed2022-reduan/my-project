@@ -47,7 +47,9 @@ const Footer = () => {
       </div>
 
       <div className="max-w-7xl mx-auto pt-4 border-t border-gray-100 text-[11px] text-gray-400 flex justify-between">
-        <p>© {new Date().getFullYear()} DevStack. All rights reserved. </p>
+        <p>
+  © {new Date().getFullYear()} DevStack | Created by Reduan Ahmed. All rights reserved.
+</p>
         <div className="flex space-x-3">
           <a href="#privacy">Privacy</a>
           <a href="#terms">Terms</a>
